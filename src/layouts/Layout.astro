@@ -1,23 +1,207 @@
-<!doctype html>
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Software engineering portfolio" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>{title}</title>
+</head>
+<body>
+
+  <div class="bubble-bg">
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+  </div>
+
+  <main>
+    <nav>
+      <div class="logo">yourname.dev</div>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a class="pill active i18n" data-en="Home" data-el="Αρχική" href="/">Home</a>
+          <a class="pill i18n" data-en="About" data-el="Σχετικά" href="/#about">About</a>
+          <a class="pill i18n" data-en="Projects" data-el="Έργα" href="/#projects">Projects</a>
+          <a class="pill i18n" data-en="Contact" data-el="Επικοινωνία" href="/#contact">Contact</a>
+        </div>
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en" id="lang-en">EN</button>
+          <button class="lang-btn" data-lang="el" id="lang-el">ΕΛ</button>
+        </div>
+      </div>
+    </nav>
+
+    <slot />
+
+    <footer>
+      <p class="i18n" data-en="made with Astro &middot; hosted on the web &middot; est. 2026" data-el="φτιαγμένο με Astro &middot; στο web &middot; από το 2026">made with Astro &middot; hosted on the web &middot; est. 2026</p>
+      <p class="i18n" data-en="Also check out my art portfolio &rarr;" data-el="Δες και το art portfolio μου &rarr;"><a href="#">Also check out my art portfolio &rarr;</a></p>
+      <div class="webring-badge">
+        <span class="badge-dot"></span>
+        <span class="i18n" data-en="best viewed with good vibes" data-el="καλύτερα με καλή διάθεση">best viewed with good vibes</span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    function setLang(lang: string) {
+      document.querySelectorAll<HTMLElement>('.i18n').forEach((el) => {
+        const text = el.dataset[lang];
+        if (text !== undefined) {
+          el.innerHTML = text;
+        }
+      });
+      document.querySelectorAll<HTMLElement>('.lang-btn').forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      document.documentElement.lang = lang;
+      localStorage.setItem('preferred-lang', lang);
+    }
+
+    document.getElementById('lang-en')?.addEventListener('click', () => setLang('en'));
+    document.getElementById('lang-el')?.addEventListener('click', () => setLang('el'));
+
+    // restore saved language preference on page load
+    const savedLang = localStorage.getItem('preferred-lang');
+    if (savedLang === 'el') {
+      setLang('el');
+    }
+  </script>
+
+</body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  .bubble-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0.35;
+  }
+  .bubble.b1 {
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle at 30% 30%, var(--blue-light), transparent 70%);
+    top: -60px;
+    left: -60px;
+  }
+  .bubble.b2 {
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle at 30% 30%, var(--orange), transparent 70%);
+    top: 300px;
+    right: -40px;
+    opacity: 0.18;
+  }
+  .bubble.b3 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle at 30% 30%, var(--blue-mid), transparent 70%);
+    bottom: -100px;
+    left: 20%;
+    opacity: 0.2;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 40px;
+    background: linear-gradient(to bottom, #6FBEEF 0%, #2E86C1 55%, #1C6EA4 100%);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  nav::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 20px;
+    right: 20px;
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
+    border-radius: 50% / 100%;
+    pointer-events: none;
+  }
+
+  .logo {
+    font-weight: 700;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 10px;
+  }
+
+  .lang-toggle {
+    display: flex;
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  .lang-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    cursor: pointer;
+  }
+  .lang-btn.active {
+    background: linear-gradient(to bottom, #FFC58A, #FF8C42 45%, #E06D22 55%, #FF9E52);
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 13px;
+    color: var(--blue-deep);
+    opacity: 0.7;
+  }
+  footer a {
+    color: var(--orange-dark);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  footer .webring-badge {
+    margin-top: 16px;
+  }
 </style>

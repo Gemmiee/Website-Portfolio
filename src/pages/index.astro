@@ -1,11 +1,444 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Your Name — Software Engineering Portfolio">
+
+  <div class="hero">
+    <h1 class="i18n" data-en="Hi, I'm Your Name" data-el="Γεια, είμαι το Όνομά σου">Hi, I'm Your Name</h1>
+    <p class="tagline i18n" data-en="Software engineering student &middot; building things with Python and beyond" data-el="Φοιτητής Πληροφορικής &middot; φτιάχνω πράγματα με Python και όχι μόνο">Software engineering student &middot; building things with Python and beyond</p>
+    <div class="cta-row">
+      <a class="btn-glossy primary i18n" data-en="View projects" data-el="Δες τα έργα" href="#projects">View projects</a>
+    </div>
+  </div>
+
+  <div class="now-widget">
+    <div class="now-dot"></div>
+    <div>
+      <span class="label i18n" data-en="Now working on" data-el="Τώρα δουλεύω πάνω σε">Now working on</span>
+      <span class="value">Your project name here</span>
+    </div>
+  </div>
+
+  <section id="about">
+    <h2 class="i18n" data-en="About me" data-el="Σχετικά με εμένα">About me</h2>
+    <div class="about-wrap">
+      <div class="about-avatar"></div>
+      <div>
+        <p class="i18n" data-en="I started programming with Python back in middle school, and it's stuck with me ever since — from small scripts to bigger projects as I've gone through my software engineering studies." data-el="Ξεκίνησα τον προγραμματισμό με Python από το γυμνάσιο, και μου έχει μείνει έκτοτε — από μικρά scripts μέχρι μεγαλύτερα έργα καθώς προχωρούσα στις σπουδές μου.">I started programming with Python back in middle school, and it's stuck with me ever since — from small scripts to bigger projects as I've gone through my software engineering studies.</p>
+        <p class="i18n" data-en="These days I'm especially interested in Python and data analysis, and I'm always looking for the next thing to build. This site is my little corner of the internet to show it off." data-el="Αυτή την περίοδο με ενδιαφέρουν ιδιαίτερα η Python και η ανάλυση δεδομένων, και ψάχνω πάντα το επόμενο project. Αυτή η σελίδα είναι η δική μου γωνιά στο internet για να τα δείξω.">These days I'm especially interested in Python and data analysis, and I'm always looking for the next thing to build. This site is my little corner of the internet to show it off.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="i18n" data-en="Skills" data-el="Δεξιότητες">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card featured">
+        <h3 class="i18n" data-en="Python &amp; data analysis" data-el="Python &amp; ανάλυση δεδομένων">Python &amp; data analysis</h3>
+        <p class="sub i18n" data-en="My strongest and longest-running skill" data-el="Η πιο δυνατή και παλιά μου δεξιότητα">My strongest and longest-running skill</p>
+        <div class="skill-list">
+          <span class="skill-pill">python</span>
+          <span class="skill-pill">pandas</span>
+          <span class="skill-pill">numpy</span>
+          <span class="skill-pill">data viz</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3 class="i18n" data-en="Languages" data-el="Γλώσσες">Languages</h3>
+        <p class="sub i18n" data-en="Comfortable writing and reading" data-el="Άνετα σε γραφή και ανάγνωση">Comfortable writing and reading</p>
+        <div class="skill-list">
+          <span class="skill-pill">python</span>
+          <span class="skill-pill">javascript</span>
+          <span class="skill-pill">html/css</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3 class="i18n" data-en="Frameworks &amp; tools" data-el="Frameworks &amp; εργαλεία">Frameworks &amp; tools</h3>
+        <p class="sub i18n" data-en="What I build with" data-el="Τι χρησιμοποιώ για να φτιάχνω">What I build with</p>
+        <div class="skill-list">
+          <span class="skill-pill">astro</span>
+          <span class="skill-pill">flask</span>
+          <span class="skill-pill">git</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3 class="i18n" data-en="Currently learning" data-el="Μαθαίνω αυτή την περίοδο">Currently learning</h3>
+        <p class="sub i18n" data-en="Actively growing here" data-el="Ενεργά σε εξέλιξη">Actively growing here</p>
+        <div class="skill-list">
+          <span class="skill-pill">typescript</span>
+          <span class="skill-pill">sql</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="i18n" data-en="Featured projects" data-el="Επιλεγμένα έργα">Featured projects</h2>
+    <div class="grid">
+      <div class="card case-study">
+        <div class="case-shot"></div>
+        <div>
+          <h3>Project one — case study</h3>
+          <p class="challenge i18n" data-en="Challenge: describe the hardest problem you solved here" data-el="Πρόκληση: περιέγραψε το πιο δύσκολο πρόβλημα που έλυσες εδώ">Challenge: describe the hardest problem you solved here</p>
+          <p>A short description of what this project does and why you built it — with a bit more depth than the others, since this is your strongest piece of work.</p>
+          <div class="tags">
+            <span class="tag">python</span>
+            <span class="tag">flask</span>
+            <span class="tag">sqlite</span>
+          </div>
+          <div class="card-links">
+            <a href="#" class="i18n" data-en="Live demo" data-el="Ζωντανή προεπισκόπηση">Live demo</a>
+            <a href="#" class="i18n" data-en="Source code" data-el="Πηγαίος κώδικας">Source code</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Project two</h3>
+        <p>A short description of what this project does and why you built it.</p>
+        <div class="tags">
+          <span class="tag">astro</span>
+          <span class="tag">javascript</span>
+        </div>
+        <div class="card-links">
+          <a href="#" class="i18n" data-en="Live demo" data-el="Ζωντανή προεπισκόπηση">Live demo</a>
+          <a href="#" class="i18n" data-en="Source code" data-el="Πηγαίος κώδικας">Source code</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Project three</h3>
+        <p>A short description of what this project does and why you built it.</p>
+        <div class="tags">
+          <span class="tag">python</span>
+          <span class="tag">data</span>
+        </div>
+        <div class="card-links">
+          <a href="#" class="i18n" data-en="Live demo" data-el="Ζωντανή προεπισκόπηση">Live demo</a>
+          <a href="#" class="i18n" data-en="Source code" data-el="Πηγαίος κώδικας">Source code</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2 class="i18n" data-en="Education" data-el="Εκπαίδευση">Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <h3>Your university name</h3>
+        <p class="meta i18n" data-en="Expected graduation: 20XX" data-el="Αναμενόμενη αποφοίτηση: 20ΧΧ">Expected graduation: 20XX</p>
+        <p class="desc i18n" data-en="Software engineering student, relevant coursework and highlights here." data-el="Φοιτητής Μηχανικού Λογισμικού, σχετικά μαθήματα και highlights εδώ.">Software engineering student, relevant coursework and highlights here.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <h3 class="i18n" data-en="Started coding" data-el="Ξεκίνησα να προγραμματίζω">Started coding</h3>
+        <p class="meta i18n" data-en="Middle school" data-el="Γυμνάσιο">Middle school</p>
+        <p class="desc i18n" data-en="First started learning Python out of curiosity." data-el="Ξεκίνησα να μαθαίνω Python από περιέργεια.">First started learning Python out of curiosity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="github">
+    <h2 class="i18n" data-en="My code" data-el="Ο κώδικάς μου">My code</h2>
+    <div class="github-widget">
+      <div class="gh-text">
+        <h3 class="i18n" data-en="Check out my GitHub" data-el="Δες το GitHub μου">Check out my GitHub</h3>
+        <p class="i18n" data-en="Pinned repos, contribution activity, and everything I'm building in the open." data-el="Pinned repos, δραστηριότητα και ό,τι φτιάχνω δημόσια.">Pinned repos, contribution activity, and everything I'm building in the open.</p>
+      </div>
+      <a class="btn-glossy secondary i18n" data-en="View profile" data-el="Δες το προφίλ" href="#">View profile</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="i18n" data-en="Get in touch" data-el="Επικοινωνήστε μαζί μου">Get in touch</h2>
+    <div class="contact-row">
+      <a class="contact-pill" href="#">Email</a>
+      <a class="contact-pill" href="#">GitHub</a>
+    </div>
+  </section>
+
 </Layout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 90px 20px 70px;
+  }
+  .hero h1 {
+    font-size: 46px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    background: linear-gradient(to bottom, var(--blue-deep), var(--blue-mid));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+  .hero p.tagline {
+    font-size: 18px;
+    color: var(--ink);
+    opacity: 0.8;
+    margin: 0 0 30px;
+  }
+  .cta-row {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  section {
+    padding: 50px 40px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  section h2 {
+    font-size: 26px;
+    color: var(--blue-deep);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .now-widget {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    max-width: 460px;
+    margin: 0 auto 10px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5));
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 999px;
+    padding: 10px 22px;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 3px 10px rgba(28, 110, 164, 0.15);
+  }
+  .now-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #7CE0A0, var(--green));
+    box-shadow: 0 0 6px rgba(46, 158, 91, 0.7);
+    flex-shrink: 0;
+  }
+  .now-widget span.label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--blue-deep);
+    opacity: 0.6;
+    display: block;
+  }
+  .now-widget span.value {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--blue-deep);
+  }
+
+  .about-wrap {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 16px rgba(28, 110, 164, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.7);
+  }
+  .about-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #BEE3FA, #4FA8E0 45%, #1C6EA4);
+    flex-shrink: 0;
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.6), 0 3px 10px rgba(0, 0, 0, 0.15);
+  }
+  .about-wrap p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .about-wrap p + p {
+    margin-top: 10px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .skill-card {
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 3px 12px rgba(28, 110, 164, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.7);
+  }
+  .skill-card.featured {
+    background: linear-gradient(160deg, rgba(255, 197, 138, 0.35), rgba(255, 255, 255, 0.6));
+    border: 1px solid rgba(255, 158, 66, 0.4);
+    box-shadow: 0 4px 16px rgba(255, 140, 66, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.7);
+  }
+  .skill-card h3 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    color: var(--blue-deep);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .skill-card.featured h3 {
+    color: var(--orange-dark);
+  }
+  .skill-card .sub {
+    font-size: 12px;
+    color: var(--ink);
+    opacity: 0.65;
+    margin: 0 0 12px;
+  }
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .skill-card.featured .skill-pill {
+    background: linear-gradient(to bottom, #FFE0BC, #FFC58A);
+    color: var(--orange-dark);
+    border: 1px solid rgba(224, 109, 34, 0.25);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  .card h3 {
+    margin: 0 0 8px;
+    color: var(--blue-deep);
+    font-size: 18px;
+  }
+  .card p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 14px;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .card-links {
+    display: flex;
+    gap: 10px;
+  }
+  .card-links a {
+    font-size: 13px;
+    color: var(--orange-dark);
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .card-links a:hover {
+    text-decoration: underline;
+  }
+
+  .case-study {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+  .case-shot {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--blue-light), var(--blue-mid));
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.5);
+  }
+  .case-study .challenge {
+    font-size: 13px;
+    color: var(--orange-dark);
+    font-weight: 500;
+    margin: 0 0 10px;
+  }
+  @media (max-width: 600px) {
+    .case-study {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 26px;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 4px;
+    bottom: 4px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--blue-mid), var(--orange));
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 26px;
+  }
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+  .timeline-dot {
+    position: absolute;
+    left: -26px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #BEE3FA, var(--blue-deep));
+    box-shadow: 0 0 0 3px var(--bg);
+  }
+  .timeline-item h3 {
+    margin: 0 0 2px;
+    font-size: 16px;
+    color: var(--blue-deep);
+  }
+  .timeline-item .meta {
+    font-size: 12px;
+    opacity: 0.6;
+    margin: 0 0 4px;
+  }
+  .timeline-item p.desc {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .github-widget {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(28, 110, 164, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.7);
+  }
+  .github-widget .gh-text h3 {
+    margin: 0 0 4px;
+    color: var(--blue-deep);
+    font-size: 17px;
+  }
+  .github-widget .gh-text p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.7;
+  }
+
+  .contact-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+</style>

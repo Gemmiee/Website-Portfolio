@@ -1,0 +1,140 @@
+/* === Design tokens === */
+:root {
+  --blue-deep: #1C6EA4;
+  --blue-mid: #4FA8E0;
+  --blue-light: #A9D8F5;
+  --orange: #FF8C42;
+  --orange-dark: #E06D22;
+  --bg: #F2F9FF;
+  --ink: #1B3A4B;
+  --glass: rgba(255, 255, 255, 0.55);
+  --glass-strong: rgba(255, 255, 255, 0.8);
+  --green: #2E9E5B;
+}
+
+/* === Font === */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Ubuntu+Mono&display=swap');
+
+/* === Base reset === */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* visible keyboard focus, everywhere */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--orange-dark);
+  outline-offset: 2px;
+}
+
+/* === Shared components used across multiple pages/components === */
+
+.pill {
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.25) 45%, rgba(255, 255, 255, 0.1) 55%, rgba(255, 255, 255, 0.35));
+  color: var(--blue-deep);
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 1px 3px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.pill.active {
+  background: linear-gradient(to bottom, #FFC58A, #FF8C42 45%, #E06D22 55%, #FF9E52);
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.btn-glossy {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+  position: relative;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.6), 0 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.btn-glossy.primary {
+  background: linear-gradient(to bottom, #FFC58A, #FF8C42 45%, #E06D22 55%, #FF9E52);
+  color: white;
+}
+
+.btn-glossy.secondary {
+  background: linear-gradient(to bottom, #BEE3FA, #4FA8E0 45%, #1C6EA4 55%, #3F9BDA);
+  color: white;
+}
+
+.card {
+  background: var(--glass);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 4px 16px rgba(28, 110, 164, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.7);
+}
+
+.tag,
+.skill-pill {
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, #D7EEFF, #A9D8F5);
+  color: var(--blue-deep);
+  border: 1px solid rgba(28, 110, 164, 0.2);
+}
+
+.contact-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5));
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 3px 10px rgba(28, 110, 164, 0.15);
+  color: var(--blue-deep);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.webring-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, #FFF6E9, #FFE0BC);
+  border: 1px solid rgba(224, 109, 34, 0.3);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.7);
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 11px;
+  color: var(--orange-dark);
+}
+
+.webring-badge .badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 4px rgba(46, 158, 91, 0.7);
+}
