@@ -28,7 +28,12 @@ const { title } = Astro.props;
   <main>
     <nav>
       <div class="logo">yourname.dev</div>
-      <div class="nav-right">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-right">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-right" id="nav-right">
         <div class="nav-links">
           <a class="pill active i18n" data-en="Home" data-el="Αρχική" href="/">Home</a>
           <a class="pill i18n" data-en="About" data-el="Σχετικά" href="/#about">About</a>
@@ -71,6 +76,23 @@ const { title } = Astro.props;
 
     document.getElementById('lang-en')?.addEventListener('click', () => setLang('en'));
     document.getElementById('lang-el')?.addEventListener('click', () => setLang('el'));
+
+    const hamburger = document.getElementById('hamburger');
+    const navRight = document.getElementById('nav-right');
+
+    function closeMenu() {
+      navRight?.classList.remove('open');
+      hamburger?.setAttribute('aria-expanded', 'false');
+    }
+
+    hamburger?.addEventListener('click', () => {
+      const isOpen = navRight?.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(!!isOpen));
+    });
+
+    navRight?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
 
     // restore saved language preference on page load
     const savedLang = localStorage.getItem('preferred-lang');
@@ -167,6 +189,71 @@ const { title } = Astro.props;
   .nav-links {
     display: flex;
     gap: 10px;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  @media (max-width: 640px) {
+    .hamburger {
+      display: flex;
+    }
+
+    .nav-right {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+      padding: 16px 20px 20px;
+      background: linear-gradient(to bottom, #2E86C1, #1C6EA4);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+    .nav-right.open {
+      display: flex;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      gap: 8px;
+    }
+    .nav-links .pill {
+      text-align: center;
+    }
+
+    .lang-toggle {
+      align-self: center;
+    }
   }
 
   .lang-toggle {
