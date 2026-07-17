@@ -27,6 +27,7 @@ body {
 }
 
 body {
+  position: relative;
   font-family: 'Ubuntu', sans-serif;
   background: var(--bg);
   color: var(--ink);
