@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import profileImg from '../assets/profileimg.png';
 ---
 
 <Layout title="Anastasia — Software Engineering Portfolio">
@@ -23,7 +25,7 @@ import Layout from '../layouts/Layout.astro';
   <section id="about">
     <h2 class="i18n" data-en="About me" data-el="Σχετικά με εμένα">About me</h2>
     <div class="about-wrap">
-      <div class="about-avatar"></div>
+      <Image src={profileImg} alt="Anastasia" class="about-avatar" width={110} height={110} />
       <div>
         <p class="i18n" data-en="I started programming with Python back in middle school, first as a hobby and then more seriously. From small scripts to bigger projects, programming became something I grew to love and now actively study at university." data-el="Ξεκίνησα τον προγραμματισμό με Python από το γυμνάσιο, πρώτα σαν χόμπι και έπειτα πιο σοβαρά. Από μικρά scripts μέχρι μεγαλύτερα έργα, ο προγραμματισμός εξελίχθηκε σε κάτι που αγαπώ και σπουδάζω στο πανεπιστήμιο.">I started programming with Python back in middle school, first as a hobby and then more seriously. From small scripts to bigger projects, programming became something I grew to love and now actively study at university.</p>
         <p class="i18n" data-en="I'm especially interested in Python and I'm always looking for the next thing to build. This site is my little corner of the internet to show it off." data-el="Ενδιαφέρομαι ιδιαίτερα με την Python και ψάχνω πάντα να δημιουργήσω το επόμενο μου project. Αυτή η σελίδα αποτελεί την δική μου γωνιά στο internet για να τα δείξω.">I'm especially interested in Python and I'm always looking for the next thing to build. This site is my little corner of the internet to show it off.</p>
@@ -150,7 +152,7 @@ import Layout from '../layouts/Layout.astro';
   <section id="contact">
     <h2 class="i18n" data-en="Get in touch" data-el="Επικοινωνήστε μαζί μου">Get in touch</h2>
     <div class="contact-row">
-      <a class="contact-pill" href="#">Email</a>
+      <a class="contact-pill" href="mailto:gemmie.dares407@passinbox.com">Email</a>
       <a class="contact-pill" href="https://github.com/Gemmiee" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </section>
@@ -245,6 +247,7 @@ import Layout from '../layouts/Layout.astro';
     width: 110px;
     height: 110px;
     border-radius: 50%;
+    object-fit: cover;
     background: linear-gradient(to bottom, #BEE3FA, #4FA8E0 45%, #1C6EA4);
     flex-shrink: 0;
     box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.6), 0 3px 10px rgba(0, 0, 0, 0.15);
@@ -266,6 +269,8 @@ import Layout from '../layouts/Layout.astro';
       padding: 24px;
     }
   }
+
+  
 
   .skills-grid {
     display: grid;
