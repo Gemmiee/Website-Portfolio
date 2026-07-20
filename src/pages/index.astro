@@ -6,19 +6,21 @@ import profileImg from '../assets/profileimg.png';
 
 <Layout title="Anastasia — Software Engineering Portfolio">
 
-  <div class="hero">
-    <h1 class="i18n" data-en="Hi, I'm Anastasia" data-el="Γεια, είμαι η Αναστασία">Hi, I'm Anastasia</h1>
-    <p class="tagline i18n" data-en="Software engineering student &middot; building things with Python and beyond" data-el="Φοιτήτρια Πληροφορικής &middot; φτιάχνω πράγματα με Python και όχι μόνο">Software engineering student &middot; building things with Python and beyond</p>
-    <div class="cta-row">
-      <a class="btn-glossy primary i18n" data-en="View projects" data-el="Δες τα έργα" href="#projects">View projects</a>
+  <div class="landing">
+    <div class="hero">
+      <h1 class="i18n" data-en="Hi, I'm Anastasia" data-el="Γεια, είμαι η Αναστασία">Hi, I'm Anastasia</h1>
+      <p class="tagline i18n" data-en="Software engineering student &middot; building things with Python and beyond" data-el="Φοιτήτρια Πληροφορικής &middot; φτιάχνω πράγματα με Python και όχι μόνο">Software engineering student &middot; building things with Python and beyond</p>
+      <div class="cta-row">
+        <a class="btn-glossy primary i18n" data-en="View projects" data-el="Δες τα έργα" href="#projects">View projects</a>
+      </div>
     </div>
-  </div>
 
-  <div class="now-widget">
-    <div class="now-dot"></div>
-    <div>
-      <span class="label i18n" data-en="Now working on" data-el="Τώρα δουλεύω πάνω στο">Now working on</span>
-      <span class="value">My Portfolio website :]</span>
+    <div class="now-widget">
+      <div class="now-dot"></div>
+      <div>
+        <span class="label i18n" data-en="Now working on" data-el="Τώρα δουλεύω πάνω στο">Now working on</span>
+        <span class="value">My Portfolio website :]</span>
+      </div>
     </div>
   </div>
 
@@ -161,6 +163,15 @@ import profileImg from '../assets/profileimg.png';
 </Layout>
 
 <style>
+  @media (max-width: 640px) {
+    .landing {
+      min-height: calc(100svh - 60px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
   .hero {
     text-align: center;
     padding: 90px 20px 70px;
@@ -254,7 +265,7 @@ import profileImg from '../assets/profileimg.png';
     box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.6), 0 3px 10px rgba(0, 0, 0, 0.15);
   }
   .about-wrap p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.7;
     margin: 0;
   }
@@ -314,7 +325,7 @@ import profileImg from '../assets/profileimg.png';
   }
   .skill-card.featured .skill-pill {
     background: linear-gradient(to bottom, #FFE0BC, #FFC58A);
-    color: var(--orange-dark);
+    color: #7a3b12;
     border: 1px solid rgba(224, 109, 34, 0.25);
   }
 
@@ -329,7 +340,7 @@ import profileImg from '../assets/profileimg.png';
     font-size: 18px;
   }
   .card p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
     margin: 0 0 14px;
   }
@@ -369,7 +380,7 @@ import profileImg from '../assets/profileimg.png';
     box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.5);
   }
   .case-study .challenge {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--orange-dark);
     font-weight: 500;
     margin: 0 0 10px;
@@ -421,7 +432,7 @@ import profileImg from '../assets/profileimg.png';
     margin: 0 0 4px;
   }
   .timeline-item p.desc {
-    font-size: 14px;
+    font-size: 16px;
     margin: 0;
     line-height: 1.5;
   }
@@ -445,7 +456,7 @@ import profileImg from '../assets/profileimg.png';
   }
   .github-widget .gh-text p {
     margin: 0;
-    font-size: 13px;
+    font-size: 15px;
     opacity: 0.7;
   }
 

@@ -95,8 +95,8 @@ button:focus-visible {
 .tag,
 .skill-pill {
   font-family: 'Ubuntu Mono', monospace;
-  font-size: 11px;
-  padding: 3px 10px;
+  font-size: 13px;
+  padding: 4px 12px;
   border-radius: 999px;
   background: linear-gradient(to bottom, #D7EEFF, #A9D8F5);
   color: var(--blue-deep);
@@ -129,7 +129,7 @@ button:focus-visible {
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.7);
   font-family: 'Ubuntu Mono', monospace;
   font-size: 11px;
-  color: var(--orange-dark);
+  color: #7a3b12;
 }
 
 .webring-badge .badge-dot {
