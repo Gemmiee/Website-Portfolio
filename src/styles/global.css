@@ -26,12 +26,30 @@ body {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
   font-family: 'Ubuntu', sans-serif;
   background: var(--bg);
   color: var(--ink);
   overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  section,
+  .landing {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  section.visible,
+  .landing.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* visible keyboard focus, everywhere */
@@ -71,6 +89,12 @@ button:focus-visible {
   text-decoration: none;
   position: relative;
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.6), 0 3px 8px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-glossy:hover {
+  transform: translateY(-3px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.6), 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
 .btn-glossy.primary {
@@ -90,6 +114,12 @@ button:focus-visible {
   border-radius: 18px;
   padding: 22px;
   box-shadow: 0 4px 16px rgba(28, 110, 164, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.7);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(28, 110, 164, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.7);
 }
 
 .tag,
@@ -138,4 +168,22 @@ button:focus-visible {
   border-radius: 50%;
   background: var(--green);
   box-shadow: 0 0 4px rgba(46, 158, 91, 0.7);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .now-dot,
+  .webring-badge .badge-dot {
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
 }
