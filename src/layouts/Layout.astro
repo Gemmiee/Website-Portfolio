@@ -39,6 +39,7 @@ const { title } = Astro.props;
           <a class="pill active i18n" data-en="Home" data-el="Αρχική" href="/">Home</a>
           <a class="pill i18n" data-en="About" data-el="Σχετικά" href="/#about">About</a>
           <a class="pill i18n" data-en="Projects" data-el="Έργα" href="/#projects">Projects</a>
+          <a class="pill i18n" data-en="Education" data-el="Εκπαίδευση" href="/#education">Education</a>
           <a class="pill i18n" data-en="Contact" data-el="Επικοινωνία" href="/#contact">Contact</a>
         </div>
         <div class="lang-toggle">
@@ -131,7 +132,7 @@ const { title } = Astro.props;
     // highlight the nav pill matching the section currently in view
     const navPills = document.querySelectorAll<HTMLElement>('.nav-links .pill');
     const homeLink = document.querySelector<HTMLElement>('.nav-links a[href="/"]');
-    const trackedSections = ['about', 'projects', 'contact'];
+    const trackedSections = ['about', 'projects', 'education', 'contact'];
 
     function setActivePill(id: string | null) {
       navPills.forEach((pill) => pill.classList.remove('active'));
