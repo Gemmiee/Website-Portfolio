@@ -169,3 +169,21 @@ button:focus-visible {
   background: var(--green);
   box-shadow: 0 0 4px rgba(46, 158, 91, 0.7);
 }
+
+/* Desktop only — bigger cards/buttons; nav pills and the compact
+   tag/skill-pill badges are deliberately left out. Mobile is untouched. */
+@media (min-width: 641px) {
+  .btn-glossy {
+    padding: 14px 36px;
+    font-size: 16px;
+  }
+
+  .card {
+    padding: 28px;
+  }
+
+  .contact-pill {
+    padding: 12px 26px;
+    font-size: 15px;
+  }
+}
