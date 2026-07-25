@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import profileImg from '../assets/profileimg.png';
+import WaterButton from '../components/WaterButton.astro';
 ---
 
 <Layout title="Anastasia — Software Engineering Portfolio">
@@ -11,7 +12,7 @@ import profileImg from '../assets/profileimg.png';
       <h1 class="i18n" data-en="Hi, I'm Anastasia" data-el="Γεια, είμαι η Αναστασία">Hi, I'm Anastasia</h1>
       <p class="tagline i18n" data-en="Software engineering student &middot; building things with Python and beyond" data-el="Φοιτήτρια Πληροφορικής &middot; φτιάχνω πράγματα με Python και όχι μόνο">Software engineering student &middot; building things with Python and beyond</p>
       <div class="cta-row">
-        <a class="btn-glossy primary i18n" data-en="View projects" data-el="Δες τα έργα" href="#projects">View projects</a>
+        <WaterButton href="#projects" dataEn="View projects" dataEl="Δες τα έργα" />
       </div>
     </div>
 
