@@ -400,6 +400,18 @@ const { href, dataEn, dataEl, waterColor = '#1C6EA4' } = Astro.props;
         }
       }
 
+      // canvas path methods throw on NaN/Infinity, which would permanently
+      // kill the animation loop mid-frame — if the sim ever goes unstable,
+      // reset to a calm surface instead of crashing. (NaN comparisons are
+      // always false, so the "worst" tracking below can't detect this on
+      // its own — it needs an explicit finite check.)
+      for (let i = 0; i < COLUMNS; i++) {
+        if (!Number.isFinite(h[i]) || !Number.isFinite(u[i])) {
+          freeze();
+          return 0;
+        }
+      }
+
       let worst = 0;
       for (let i = 0; i < COLUMNS; i++) {
         const off = Math.abs(h[i] - rest);
