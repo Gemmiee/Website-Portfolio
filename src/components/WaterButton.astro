@@ -8,12 +8,19 @@ interface Props {
   dataEn: string;
   dataEl: string;
   waterColor?: string;
+  external?: boolean;
 }
 
-const { href, dataEn, dataEl, waterColor = '#1C6EA4' } = Astro.props;
+const { href, dataEn, dataEl, waterColor = '#1C6EA4', external = false } = Astro.props;
 ---
 
-<a href={href} class="water-button" data-water-color={waterColor}>
+<a
+  href={href}
+  class="water-button"
+  data-water-color={waterColor}
+  target={external ? '_blank' : undefined}
+  rel={external ? 'noopener noreferrer' : undefined}
+>
   <span class="water-button-glass" aria-hidden="true"></span>
   <span class="water-button-tint" aria-hidden="true"></span>
   <span class="water-button-canvas-wrap" aria-hidden="true">
