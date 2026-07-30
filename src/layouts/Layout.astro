@@ -135,6 +135,14 @@ const { title } = Astro.props;
     const homeLink = document.querySelector<HTMLElement>('.nav-links a[href="/"]');
     const trackedSections = ['about', 'projects', 'education', 'contact'];
 
+    // already on the homepage — scroll to top instead of a full page reload
+    homeLink?.addEventListener('click', (e) => {
+      if (window.location.pathname === '/') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
     function setActivePill(id: string | null) {
       navPills.forEach((pill) => pill.classList.remove('active'));
       const target = id ? document.querySelector<HTMLElement>(`.nav-links a[href="/#${id}"]`) : homeLink;
