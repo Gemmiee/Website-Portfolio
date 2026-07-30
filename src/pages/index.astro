@@ -95,9 +95,9 @@ import WaterButton from '../components/WaterButton.astro';
   <section id="projects">
     <h2 class="i18n" data-en="Featured projects" data-el="Επιλεγμένα έργα">Featured projects</h2>
     <div class="grid">
-      <div class="card case-study">
-        <img class="case-shot" src="/universifight.gif" alt="Universifight gameplay preview" loading="lazy" />
-        <div>
+      <div class="card project-card">
+        <img class="project-shot" src="/universifight.gif" alt="Universifight gameplay preview" loading="lazy" tabindex="0" role="button" />
+        <div class="project-body">
           <h3>Project one — Universifight</h3>
           <p class="challenge i18n" data-en="Challenge: continuity between game scenes and implementing visual arts frame by frame to the code" data-el="Πρόκληση: η συνοχή μεταξύ των σκηνών του παιχνιδιού και προσαρμογή των frame by frame τεχνών στον κώδικα">Challenge: continuity between game scenes and implementing visual arts frame by frame to the code</p>
           <p class="i18n" data-en="Universifight is a 2D turn-based combat game built with Python and Pygame. Originally made for a university project, it features its own small story, hand-drawn character animations and a full scene pipeline." data-el="Το Universifight είναι ένα 2D παιχνίδι μάχης βασισμένο σε γύρους, φτιαγμένο με Python και Pygame. Δημιουργημένο ως πανεπιστημιακή εργασία, διαθέτει τη δική του μικρή ιστορία, χειροποίητα κινούμενα σχέδια και ένα πλήρες σύστημα σκηνών.">Universifight is a 2D turn-based combat game built with Python and Pygame. Originally made for a university project, it features its own small story, hand-drawn character animations and a full scene pipeline.</p>
@@ -112,43 +112,57 @@ import WaterButton from '../components/WaterButton.astro';
           </div>
         </div>
       </div>
-      <div class="card">
-        <h3>Project two — AI image generator with UI</h3>
-        <p class="i18n" data-en="An AI-powered image generator focused on houses, with user prompt and a friendly interface." data-el="Πρόγραμμα δημιουργίας εικόνων με AI, βασισμένο και φιλικό προς τον χρήστη.">An AI-powered image generator focused on houses, with user prompt and a friendly interface.</p>
-        <div class="tags">
-          <span class="tag">python</span>
-          <span class="tag">tkinter</span>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/Gemmiee/AI-Image-Generator-with-UI" target="_blank" rel="noopener noreferrer" class="i18n" data-en="Source code" data-el="Πηγαίος κώδικας">Source code</a>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Project three — Online user behavior analyzer</h3>
-        <p class="i18n" data-en="A group project analyzing online user behavior using Python and data visualization tools." data-el="Ένα ομαδικό έργο που αναλύει τη συμπεριφορά των χρηστών στο διαδίκτυο χρησιμοποιώντας Python και εργαλεία εμφάνισης δεδομένων.">A group project analyzing online user behavior using Python and data visualization tools.</p>
-        <div class="tags">
-          <span class="tag">python</span>
-          <span class="tag">pandas</span>
-          <span class="tag">csv</span>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/thanossavvopoulos/User_Online_Behavior_Analysis" target="_blank" rel="noopener noreferrer" class="i18n" data-en="Source code" data-el="Πηγαίος κώδικας">Source code</a>
+      <div class="card project-card">
+        <img class="project-shot shot-ai-img" src="/AI_img.png" alt="AI image generator interface preview" loading="lazy" tabindex="0" role="button" />
+        <div class="project-body">
+          <h3>Project two — AI image generator with UI</h3>
+          <p class="i18n" data-en="An AI-powered image generator focused on houses, with user prompt and a friendly interface." data-el="Πρόγραμμα δημιουργίας εικόνων με AI, βασισμένο και φιλικό προς τον χρήστη.">An AI-powered image generator focused on houses, with user prompt and a friendly interface.</p>
+          <div class="tags">
+            <span class="tag">python</span>
+            <span class="tag">tkinter</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/Gemmiee/AI-Image-Generator-with-UI" target="_blank" rel="noopener noreferrer" class="i18n" data-en="Source code" data-el="Πηγαίος κώδικας">Source code</a>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <h3>Project four — Custom image classifier UI</h3>
-        <p class="i18n" data-en="A desktop app for training and deploying custom image classifiers, using a ResNet-18 backbone as a frozen feature extractor for fast CPU training, with live training progress and batch classification." data-el="Μια desktop εφαρμογή για εκπαίδευση και ανάπτυξη προσαρμοσμένων ταξινομητών εικόνων, με ResNet-18 ως frozen feature extractor για γρήγορη εκπαίδευση σε CPU, με ζωντανή παρακολούθηση εκπαίδευσης και ταξινόμηση σε παρτίδες.">A desktop app for training and deploying custom image classifiers, using a ResNet-18 backbone as a frozen feature extractor for fast CPU training, with live training progress and batch classification.</p>
-        <div class="tags">
-          <span class="tag">python</span>
-          <span class="tag">pytorch</span>
-          <span class="tag">resnet-18</span>
+      <div class="card project-card">
+        <img class="project-shot shot-user-analysis" src="/UserAnalysis.png" alt="Online user behavior analysis chart preview" loading="lazy" tabindex="0" role="button" />
+        <div class="project-body">
+          <h3>Project three — Online user behavior analyzer</h3>
+          <p class="i18n" data-en="A group project analyzing online user behavior using Python and data visualization tools." data-el="Ένα ομαδικό έργο που αναλύει τη συμπεριφορά των χρηστών στο διαδίκτυο χρησιμοποιώντας Python και εργαλεία εμφάνισης δεδομένων.">A group project analyzing online user behavior using Python and data visualization tools.</p>
+          <div class="tags">
+            <span class="tag">python</span>
+            <span class="tag">pandas</span>
+            <span class="tag">csv</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/thanossavvopoulos/User_Online_Behavior_Analysis" target="_blank" rel="noopener noreferrer" class="i18n" data-en="Source code" data-el="Πηγαίος κώδικας">Source code</a>
+          </div>
         </div>
-        <div class="card-links">
-          <a href="https://github.com/Gemmiee/custom_class_image_classification_UI" target="_blank" rel="noopener noreferrer" class="i18n" data-en="Source code" data-el="Πηγαίος κώδικας">Source code</a>
+      </div>
+      <div class="card project-card">
+        <img class="project-shot shot-img-class" src="/ImgClass.png" alt="Custom image classifier interface preview" loading="lazy" tabindex="0" role="button" />
+        <div class="project-body">
+          <h3>Project four — Custom image classifier UI</h3>
+          <p class="i18n" data-en="A desktop app for training and deploying custom image classifiers, using a ResNet-18 backbone as a frozen feature extractor for fast CPU training, with live training progress and batch classification." data-el="Μια desktop εφαρμογή για εκπαίδευση και ανάπτυξη προσαρμοσμένων ταξινομητών εικόνων, με ResNet-18 ως frozen feature extractor για γρήγορη εκπαίδευση σε CPU, με ζωντανή παρακολούθηση εκπαίδευσης και ταξινόμηση σε παρτίδες.">A desktop app for training and deploying custom image classifiers, using a ResNet-18 backbone as a frozen feature extractor for fast CPU training, with live training progress and batch classification.</p>
+          <div class="tags">
+            <span class="tag">python</span>
+            <span class="tag">pytorch</span>
+            <span class="tag">resnet-18</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/Gemmiee/custom_class_image_classification_UI" target="_blank" rel="noopener noreferrer" class="i18n" data-en="Source code" data-el="Πηγαίος κώδικας">Source code</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close preview">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
 
   <section id="education">
     <h2 class="i18n" data-en="Education" data-el="Εκπαίδευση">Education</h2>
@@ -405,31 +419,80 @@ import WaterButton from '../components/WaterButton.astro';
     text-decoration: underline;
   }
 
-  .case-study {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 24px;
-    align-items: center;
+  .project-card {
+    display: flex;
+    flex-direction: column;
   }
-  .case-shot {
+  .project-shot {
     width: 100%;
     aspect-ratio: 4 / 3;
-    border-radius: 14px;
     object-fit: cover;
+    cursor: zoom-in;
     background: linear-gradient(135deg, var(--blue-light), var(--blue-mid));
-    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.5);
+    transition: transform 0.2s ease;
   }
-  .case-study .challenge {
+  .project-shot:hover {
+    transform: scale(1.03);
+  }
+  .project-body {
+    padding: 22px;
+  }
+  .challenge {
     font-size: 15px;
     color: var(--orange-dark);
     font-weight: 500;
     margin: 0 0 10px;
   }
-  @media (max-width: 600px) {
-    .case-study {
-      grid-template-columns: 1fr;
-    }
+
+  /* per-image crop focus, so nothing important gets cut off by the 4:3 box */
+  .shot-ai-img {
+    object-position: center 40%;
+  }
+  .shot-user-analysis {
+    object-position: 35% center;
+  }
+  .shot-img-class {
+    object-position: 0% center;
+  }
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 20, 30, 0.85);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .lightbox.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.3);
   }
 
   .timeline {
@@ -569,10 +632,7 @@ import WaterButton from '../components/WaterButton.astro';
     .card-links a {
       font-size: 14px;
     }
-    .case-study {
-      grid-template-columns: 260px 1fr;
-    }
-    .case-study .challenge {
+    .challenge {
       font-size: 16px;
     }
 
@@ -597,3 +657,38 @@ import WaterButton from '../components/WaterButton.astro';
     }
   }
 </style>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  const lightboxClose = document.getElementById('lightbox-close');
+
+  function openLightbox(src: string, alt: string) {
+    if (!lightbox || !lightboxImg) return;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+    lightbox.classList.add('open');
+  }
+
+  function closeLightbox() {
+    lightbox?.classList.remove('open');
+  }
+
+  document.querySelectorAll<HTMLImageElement>('.project-shot').forEach((img) => {
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+    img.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(img.src, img.alt);
+      }
+    });
+  });
+
+  lightboxClose?.addEventListener('click', closeLightbox);
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
